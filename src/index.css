@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper-50 text-ink-800 font-sans;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    @apply bg-accent-100 text-accent-600;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-6;
+  }
+
+  .card {
+    @apply bg-white rounded-sm border border-paper-200 shadow-sm transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-md -translate-y-0.5;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2.5 rounded-sm text-sm font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink-800 text-white hover:bg-ink-700;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-ink-700 hover:bg-paper-100;
+  }
+
+  .divider {
+    @apply h-px bg-paper-200 my-8;
+  }
+
+  .prose-blog h1 {
+    @apply text-3xl font-display font-semibold text-ink-900 mb-6 tracking-wide;
+  }
+
+  .prose-blog h2 {
+    @apply text-2xl font-display font-semibold text-ink-800 mt-10 mb-4 tracking-wide;
+  }
+
+  .prose-blog h3 {
+    @apply text-xl font-serif font-semibold text-ink-800 mt-8 mb-3;
+  }
+
+  .prose-blog p {
+    @apply text-ink-700 mb-5 leading-relaxed text-[17px];
+  }
+
+  .prose-blog a {
+    @apply text-accent-600 hover:text-accent-500 underline underline-offset-4;
+    text-decoration-color: #F5E6C8;
+  }
+
+  .prose-blog blockquote {
+    @apply border-l-4 border-accent-500 pl-6 py-2 my-6 italic text-ink-600 bg-accent-50/50;
+  }
+
+  .prose-blog ul, .prose-blog ol {
+    @apply my-5 pl-6;
+  }
+
+  .prose-blog li {
+    @apply text-ink-700 mb-2;
+  }
+
+  .prose-blog li::marker {
+    @apply text-accent-500;
+  }
+
+  .prose-blog code:not(pre code) {
+    @apply bg-paper-100 text-accent-600 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose-blog pre {
+    @apply my-6 rounded-sm overflow-x-auto;
+  }
+
+  .prose-blog img {
+    @apply my-8 rounded-sm mx-auto max-w-full;
+  }
+
+  .prose-blog hr {
+    @apply my-10 border-paper-200;
+  }
+
+  .prose-blog table {
+    @apply w-full my-6 border-collapse;
+  }
+
+  .prose-blog th, .prose-blog td {
+    @apply border border-paper-200 px-4 py-2 text-left;
+  }
+
+  .prose-blog th {
+    @apply bg-paper-100 font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .opacity-hover {
+    @apply opacity-80 hover:opacity-100 transition-opacity duration-200;
+  }
+}
